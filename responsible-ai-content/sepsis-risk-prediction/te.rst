@@ -63,7 +63,7 @@ Usability, and Efficacy can be found in the CHAI RAIG)*
     negative classes, imbalanced datasets where one class is
     significantly underrepresented (accuracy inflates), and threshold
     independent evaluation (evaluates across all thresholds to identify
-    optimal performance for specific applicaiton/population); useful
+    optimal performance for specific application/population); useful
     depending on whether false positives, or in the case of sepsis,
     false negatives, carry higher consequences.
   - Reference: `Classification: ROC and
@@ -100,7 +100,7 @@ Usability, and Efficacy can be found in the CHAI RAIG)*
     diagnoses; internal criteria from ACCM guidelines; ICU admission
     meeting Goldstein sepsis criteria. Measure of accuracy for a positive
     result (proportion of true positives for all positive predictions),
-    useful when false positives are costly or undesireable. Valuable in
+    useful when false positives are costly or undesirable. Valuable in
     datasets with strong class imbalance, where positive cases are rare
     (medical diagnosis). Traditional accuracy can be misleading because
     it would be biased towards majority class. Also helpful when wanting
@@ -163,7 +163,7 @@ Usability, and Efficacy can be found in the CHAI RAIG)*
     identified as positive.
   - Rationale: Combines precision and recall into a single value,
     provide balance view of accuracy in all positive predictions and
-    completenes in capturing positives. Its useful when there is class
+    completeness in capturing positives. It's useful when there is class
     imbalance and the positive class is rare. (the ability of the model
     to correctly predict the minority class without being overly
     affected by more prevalent class), good when there is a high cost of
@@ -236,7 +236,7 @@ Usability, and Efficacy can be found in the CHAI RAIG)*
     patients with invasive surgery in the last 24 hours, bone marrow
     transplant patients, etc.  
   - Rationale: Vanilla classification metrics may overestimate model
-    performance within it's conditions of use.
+    performance within its conditions of use.
   - Reference: `Wong, A., Otles, E., Donnelly, J. P., Krumm, A.,
     McCullough, J., DeTroyer-Cooley, O., ... & Singh, K. (2021).
     External validation of a widely implemented proprietary sepsis
@@ -996,7 +996,7 @@ Reliability can be found in the CHAI RAIG)*
 
   - Intended Use: Point(s) of contact for clinical end-users to escalate
     model issues.
-  - Rationale: Changes in the EHR may lead to critical failues in
+  - Rationale: Changes in the EHR may lead to critical failures in
     clinical decision support that are not identified via automated
     controls.
   - Reference: 
