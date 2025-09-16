@@ -55,7 +55,7 @@ Organizations
 * AWS
 * Bayesian Health
 * Best Buy
-* Boston Children's
+* Boston Children's 
 * CAP
 * Centaur Labs
 * Children's Hospital of Philadelphia (CHOP)
@@ -71,7 +71,7 @@ Organizations
 * Glass Health
 * Google
 * Greensboro Radiology
-* Harvard Children's
+* Harvard Children's 
 * Honor Health
 * Intel
 * Iodine Software
@@ -109,7 +109,7 @@ Organizations
 * Solventum
 * Stanford
 * Tortus
-* Twin Health
+* Twin Health 
 * UC Davis
 * UC Riverside
 * UNC Health
@@ -117,6 +117,6 @@ Organizations
 * UnitedHealth Group
 * UW Health Pharmacy Services
 * VA
-* Viz AI
+* Viz AI 
 * Wolters Kluwer
 * Yale
