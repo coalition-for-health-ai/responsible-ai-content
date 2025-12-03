@@ -33,7 +33,7 @@ Version Control
 - **v0.2**: Draft shared with CHAI Board and Members for early review (5
   business days before public release).
 - **v1.0**: Content pushed to public repository for continuous contributions + public feedback
-- **v1.0+**: Feedback is incorporated and reflected in subsequent versions, as needed
+- **v1.0+**: Feedback is incorporated in future versions, as needed
 
 For future versions:
 
