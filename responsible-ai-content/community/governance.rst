@@ -30,8 +30,7 @@ Version Control
 ---------------
 
 - **v0.1**: Initial content development in a private repository.
-- **v0.2**: Draft shared with CHAI Board and Members for early review (5
-  business days before public release).
+- **v0.2**: Draft shared with CHAI Members for early review (5-7 business days before public release).
 - **v1.0**: Content pushed to public repository for continuous contributions + public feedback
 - **v1.0+**: Feedback is incorporated in future versions, as needed
 
