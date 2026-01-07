@@ -105,10 +105,11 @@ Individuals (requested to identify by name)
 * Qilu Yu, National Institutes of Health (NIH), National Center for Complementary and Integrative Health (NCCIH)
 * Joe Derenzo, Healthcare Performance Group (HPG)
 * Joe Vanderbeek, Healthcare Performance Group (HPG)
-* Dorcas Yao, Individual Contributor
 * Shiba Kuanar, Mayo Clinic
 * Madhvi Sharma, Oracle Health
 * Tanya A. Zucconi, ZGM Advisors
 * Jarod Parrish, Pharm.D., Belmont University College of Pharmacy
 * Vince Hartman, Abstractive Health
 * Sudha Jayaraman, Suki
+* Dorcas Yao, Individual Contributor
+* Ishaan Kejriwal, Individual Contributor
