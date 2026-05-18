@@ -11,4 +11,5 @@ Clinical Decision Support
    t&e-framework
    contributors
    definitions
+   evaluation-notebooks/index
 

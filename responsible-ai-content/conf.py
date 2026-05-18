@@ -9,16 +9,37 @@
 project = 'CHAI Responsible AI Content'
 copyright = '2025, Coalition for Health AI'
 author = 'Coalition for Health AI'
+try:
+    from subprocess import check_output
+    release = check_output(['git', 'rev-parse', '@'])
+    release = release.decode().strip()
+except Exception:
+    release = 'main'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.mathjax', 'sphinx_rtd_theme']
+extensions = ['sphinx.ext.mathjax', 'sphinx_rtd_theme', 'nbsphinx']
 
 templates_path = ['_templates']
 exclude_patterns = []
 
+# -- nbsphinx configuration --------------------------------------------------
 
+# Use saved notebook outputs; avoids extra runtime deps on Read the Docs.
+nbsphinx_execute = 'never'
+
+nbsphinx_prolog = r"""
+{% set docname = env.doc2path(env.docname, base=None)|string %}
+
+.. raw:: html
+
+    <div class="admonition note">
+      This page was generated from
+      <a class="reference external" href="https://github.com/coalition-for-health-ai/responsible-ai-content/blob/{{ env.config.release|e }}/responsible-ai-content/{{ docname|e }}">{{ docname|e }}</a>.
+      <a href="{{ env.docname.split('/')|last|e + '.ipynb' }}" class="reference download internal" download>Download notebook</a>.
+    </div>
+"""
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

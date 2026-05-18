@@ -1,0 +1,4 @@
+case_id,guideline_id,guideline_text,version,allowed_equivalents,contraindications,strength
+C001,ADA_2024_9_4,"Start metformin for T2D unless eGFR<30",ADA_2024,"[BIGUANIDE_CLASS]","[eGFR_lt_30]",Strong
+C002,NCCN_BR_2025_A1,"Avoid NSAIDs in stage 4-5 CKD",NCCN_2025,"[]","[CKD_stage_ge_4]",Strong
+C003,ACC_AHA_HTN_2022_ACE1,"Use ACE inhibitor for hypertension",ACC_AHA_2022,"[ACE_CLASS]","[pregnancy]",Strong

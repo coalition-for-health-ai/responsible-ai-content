@@ -1,0 +1,5 @@
+case_id,rank,pred_id,pred_text,references,confidence
+C001,1,Pred_Met_01,"Start metformin","[ADA_2024_9_4]",0.82
+C001,2,Pred_SGLT2_01,"Consider SGLT2 inhibitor","[]",0.41
+C002,1,Pred_NSAID_01,"Avoid NSAIDs","[]",0.70
+C003,1,Pred_ACE_01,"Start ACE inhibitor","[ACC_AHA_HTN_2022_ACE1]",0.90
