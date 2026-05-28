@@ -1,0 +1,42 @@
+/*
+ * Wide-layout exception for the Agentic unified framework interactive page.
+ * Loaded only on agentic/chai_unified_framework_v2 (see conf.py).
+ */
+
+.wy-nav-content {
+  max-width: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 1.618em 3.236em !important;
+  background: #fcfcfc !important;
+}
+
+.rst-content,
+.rst-content .document,
+.rst-content .document .section {
+  max-width: none !important;
+}
+
+section#chai-agentic-ai-unified-t-e-framework > h1,
+section#chai-agentic-ai-unified-t-e-framework > p {
+  display: none;
+}
+
+.chai-unified-framework-embed {
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #fcfcfc;
+  color-scheme: light;
+}
+
+.chai-unified-framework-embed .matrix {
+  min-width: 1180px;
+  margin-right: 20px;
+}
+
+.chai-unified-framework-embed body {
+  padding: 24px 20px 48px !important;
+  background: transparent !important;
+}

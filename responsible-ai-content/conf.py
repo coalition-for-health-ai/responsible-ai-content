@@ -60,3 +60,20 @@ latex_logo = "_static/logo.png"
 latex_elements = {
   'extraclassoptions': 'openany,oneside'
 }
+
+# -- Page-specific layout exceptions -----------------------------------------
+
+_UNIFIED_FRAMEWORK_PAGE = 'agentic/chai_unified_framework_v2'
+
+
+def _html_page_context(app, pagename, templatename, context, doctree):
+    if pagename != _UNIFIED_FRAMEWORK_PAGE:
+        return
+    css = '_static/chai_unified_framework_layout.css'
+    context.setdefault('css_files', [])
+    if css not in context['css_files']:
+        context['css_files'].append(css)
+
+
+def setup(app):
+    app.connect('html-page-context', _html_page_context)
