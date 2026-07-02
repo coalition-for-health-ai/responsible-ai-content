@@ -1,5 +1,5 @@
-Clinical Decision Support
-=========================
+Agentic
+=======
 
 
 .. toctree::
@@ -11,5 +11,6 @@ Clinical Decision Support
    t&e-framework
    contributors
    definitions
-   evaluation-notebooks/index
-
+   methodology
+   chai_unified_framework_v2
+   unified-framework-pdf

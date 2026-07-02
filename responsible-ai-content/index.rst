@@ -65,6 +65,10 @@ By releasing this content under an open-source license, we:
    patient-discharge-summarization/index
    sepsis-risk-prediction/index
    general-health-advice-chatbot/index
+   mental-health/index
+   clinical-trials/index
+   agentic/index
+   Ambient-AI/index
    clinical-decision-support/index
    electronic-health-record-information-retrieval/index
    prior-authorization-ai-supported-criteria-matching/index

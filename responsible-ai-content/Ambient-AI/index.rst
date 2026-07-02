@@ -1,5 +1,5 @@
-Clinical Decision Support
-=========================
+Ambient AI
+==========
 
 
 .. toctree::
@@ -11,5 +11,4 @@ Clinical Decision Support
    t&e-framework
    contributors
    definitions
-   evaluation-notebooks/index
-
+   methodology
