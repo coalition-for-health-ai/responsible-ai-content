@@ -12,6 +12,5 @@ Agentic
    contributors
    definitions
    methodology
-   evaluation-notebooks/index
    chai_unified_framework_v2
    unified-framework-pdf

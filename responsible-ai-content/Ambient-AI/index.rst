@@ -11,4 +11,4 @@ Ambient AI
    t&e-framework
    contributors
    definitions
-   evaluation-notebooks/index
+   methodology
