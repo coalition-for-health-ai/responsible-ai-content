@@ -7,4 +7,8 @@ Mental Health
    :titlesonly:
    :caption: Contents:
 
+   introduction
    t&e-framework
+   contributors
+   definitions
+   methodology
