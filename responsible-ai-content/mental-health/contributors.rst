@@ -7,7 +7,7 @@ We want to start by thanking every individual who showed interest, participated,
 
 CHAI extends its sincere appreciation to all participants for their time, expertise, and thoughtful feedback throughout the development process. CHAI would like to provide special recognition to the individuals below who requested attribution by name for their contributions to these efforts:
 
-- Ashleigh Golden, PsyD, MSCP, Wayhaven, Stanford University School of Medicine
+- Ashleigh Golden, PsyD, MSCP, Co-Founder & Chief Clinical Officer, Wayhaven, Stanford University School of Medicine
 - Nate Blaylock, PhD, Canary Speech
 - Manu Sharma MD, FAPA, Hartford Healthcare, Yale School of Medicine
 - Stephenie Roberts, Healthcare Performance Group Inc.
