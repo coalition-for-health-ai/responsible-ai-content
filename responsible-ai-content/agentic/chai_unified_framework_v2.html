@@ -39,25 +39,24 @@
   --aut-bg: #fffbeb; --aut-border: #fcd34d; --aut-text: #78350f; --aut-mid: #d97706;
   --fin-bg: #f0fdf4; --fin-border: #86efac; --fin-text: #14532d; --fin-mid: #16a34a;
 
-  --gap-bg: #fff8e6; --gap-border: #f59e0b; --gap-text: #92400e;
+  --gap-bg: #fef2f2; --gap-border: #dc2626; --gap-text: #7f1d1d;
   --radius: 8px; --radius-sm: 5px;
   color-scheme: light;
 }
 
-body { font-family: var(--font); background: transparent; color: var(--text); padding: 24px 20px 48px; font-size: 13px; line-height: 1.5; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); padding: 24px 20px 48px; font-size: 13px; line-height: 1.5; }
 
 .header { margin-bottom: 20px; }
 .header-top { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
 .chai-badge { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; background: #0d3d6e; color: #fff; padding: 3px 9px; border-radius: 4px; }
 .header h1 { font-size: 19px; font-weight: 600; letter-spacing: -.3px; margin-bottom: 4px; }
-.header p  { font-size: 12px; color: var(--text-muted); max-width: none; line-height: 1.55; }
+.header p  { font-size: 12px; color: var(--text-muted); max-width: 820px; }
 
 .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; align-items: center; }
 .controls-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; color: var(--text-faint); margin-right: 4px; }
-.chai-btn { font-size: 11px; padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-muted); cursor: pointer; transition: background .15s, color .15s, border-color .15s, box-shadow .15s; font-family: var(--font); box-shadow: 0 1px 2px rgba(26, 25, 22, 0.04); appearance: none; -webkit-appearance: none; }
-.chai-btn:hover { background: #f0efe9; color: var(--text); border-color: var(--border-strong); }
-.chai-btn:focus-visible { outline: 2px solid #3575b5; outline-offset: 2px; }
-.chai-btn.active { background: #0d3d6e; color: #fff; border-color: #0d3d6e; font-weight: 500; box-shadow: 0 1px 3px rgba(13, 61, 110, 0.25); }
+.btn { font-size: 11px; padding: 4px 11px; border-radius: 20px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-muted); cursor: pointer; transition: all .12s; font-family: var(--font); }
+.btn:hover { background: var(--border); color: var(--text); }
+.btn.active { background: var(--text); color: var(--bg); border-color: var(--text); font-weight: 500; }
 .sep { width: 1px; height: 18px; background: var(--border-strong); margin: 0 4px; }
 
 .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
@@ -85,7 +84,6 @@ body { font-family: var(--font); background: transparent; color: var(--text); pa
   border-radius: var(--radius);
   overflow: hidden;
   margin-bottom: 32px;
-  box-shadow: 0 1px 4px rgba(26, 25, 22, 0.06);
 }
 
 .col-header-spacer { background: var(--bg); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 10px 12px; display: flex; align-items: flex-end; }
@@ -133,18 +131,15 @@ body { font-family: var(--font); background: transparent; color: var(--text); pa
 .risk-aut .cell { background: color-mix(in srgb, var(--aut-bg) 12%, var(--surface)); }
 .risk-fin .cell { background: color-mix(in srgb, var(--fin-bg) 12%, var(--surface)); }
 
-.metric-card { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 8px; margin-bottom: 5px; background: var(--surface); cursor: pointer; transition: border-color .12s, background .12s, box-shadow .12s; display: none; }
+.metric-card { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 8px; margin-bottom: 5px; background: var(--surface); cursor: pointer; transition: border-color .12s, background .12s; display: none; }
 .metric-card:last-child { margin-bottom: 0; }
-.metric-card:hover { border-color: var(--border-strong); background: #faf9f6; box-shadow: 0 1px 3px rgba(26, 25, 22, 0.06); }
+.metric-card:hover { border-color: var(--border-strong); background: var(--bg); }
 .metric-card.visible { display: block; }
+.metric-card.expanded .card-body { display: block; }
 
 .card-name { font-size: 11px; font-weight: 600; color: var(--text); line-height: 1.3; margin-bottom: 2px; }
 .card-tag  { font-size: 10px; color: var(--text-faint); }
-.card-open-hint { font-size: 9px; color: var(--text-faint); margin-top: 4px; opacity: 0; transition: opacity .12s; }
-.metric-card:hover .card-open-hint,
-.gap-card:hover .card-open-hint,
-.universal-card:hover .card-open-hint { opacity: 1; }
-.card-body { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border); }
+.card-body { display: none; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border); }
 .card-body p { font-size: 11px; color: var(--text-muted); line-height: 1.5; margin-bottom: 5px; }
 .card-section { margin-bottom: 6px; }
 .card-section-label { display: block; font-size: 9px; font-weight: 700; letter-spacing: .55px; text-transform: uppercase; color: var(--text-faint); margin-bottom: 2px; }
@@ -164,12 +159,13 @@ body { font-family: var(--font); background: transparent; color: var(--text); pa
 .card-bench.task  { background: var(--task-bg); color: var(--task-text); }
 .card-bench.all   { background: #f0eeff; color: #4c3b99; }
 
-.gap-card { border: 1px dashed var(--gap-border); border-radius: var(--radius-sm); padding: 6px 8px; margin-bottom: 5px; background: var(--gap-bg); cursor: pointer; transition: opacity .12s, border-color .12s; display: none; }
+.gap-card { border: 1px dashed var(--gap-border); border-radius: var(--radius-sm); padding: 6px 8px; margin-bottom: 5px; background: var(--gap-bg); cursor: pointer; transition: opacity .12s; display: none; }
 .gap-card:last-child { margin-bottom: 0; }
 .gap-card:hover { opacity: .85; }
 .gap-card.visible { display: block; }
+.gap-card.expanded .card-body { display: block; }
 .gap-card .card-name { color: var(--gap-text); }
-.gap-card .card-tag  { color: #b45309; font-size: 10px; }
+.gap-card .card-tag  { color: #b91c1c; font-size: 10px; }
 .gap-badge { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--gap-text); margin-right: 4px; opacity: .85; }
 
 .universal-section { margin-bottom: 32px; }
@@ -179,86 +175,187 @@ body { font-family: var(--font); background: transparent; color: var(--text); pa
 .universal-card { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 9px 11px; background: var(--surface); cursor: pointer; transition: border-color .12s; display: none; }
 .universal-card.visible { display: block; }
 .universal-card:hover { border-color: var(--border-strong); }
+.universal-card.expanded .card-body { display: block; }
 .universal-card .card-name { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
 .universal-card .card-tag  { font-size: 10px; color: var(--text-faint); }
-
-/* Metric detail modal (<dialog>) */
-.framework-modal {
-  border: none;
-  padding: 0;
-  margin: auto;
-  z-index: 10000;
-  max-width: min(720px, calc(100vw - 2rem));
-  width: 100%;
-  border-radius: 12px;
-  background: var(--surface);
-  color: var(--text);
-  box-shadow: 0 24px 64px rgba(26, 25, 22, 0.2);
-}
-.framework-modal::backdrop {
-  background: rgba(26, 25, 22, 0.42);
-  backdrop-filter: blur(3px);
-}
-.framework-modal[open] { animation: modal-in .18s ease-out; }
-@keyframes modal-in {
-  from { opacity: 0; transform: translateY(12px) scale(0.98); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-.modal-panel { position: relative; display: flex; flex-direction: column; max-height: min(85vh, 760px); }
-.modal-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 2;
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface);
-  color: var(--text-muted);
-  font-size: 20px;
-  line-height: 1;
-  cursor: pointer;
-  transition: background .12s, color .12s, border-color .12s;
-}
-.modal-close:hover { background: #f0efe9; color: var(--text); border-color: var(--border-strong); }
-.modal-close:focus-visible { outline: 2px solid #3575b5; outline-offset: 2px; }
-.modal-header {
-  padding: 1.25rem 3rem 0.75rem 1.25rem;
-  border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
-}
-.modal-header h2 {
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 1.35;
-  margin: 0 0 6px;
-  padding-right: 0.5rem;
-}
-.modal-subtitle { font-size: 12px; color: var(--text-muted); margin: 0; line-height: 1.4; }
-.modal-body {
-  padding: 1rem 1.25rem 1.25rem;
-  overflow-y: auto;
-  flex: 1;
-  min-height: 0;
-}
-.modal-body .modal-meta {
-  font-size: 11px;
-  color: var(--text-faint);
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-}
-.modal-body .card-section { margin-bottom: 14px; }
-.modal-body .card-section-label { font-size: 10px; margin-bottom: 4px; }
-.modal-body p { font-size: 13px; line-height: 1.55; margin-bottom: 8px; }
-.modal-body .card-bench { font-size: 11px; padding: 4px 10px; margin-bottom: 14px; }
-.modal-body .card-reference-section { margin-top: 4px; }
-.modal-body.gap-detail .card-section p { margin-bottom: 0; }
 </style>
 
 <meta name="theme-color" content="#fcfcfc">
 <meta name="color-scheme" content="light">
+
+<!-- Responsive layer — ordered last so layout rules win over the base and forced-dark blocks -->
+<style id="responsive-layer">
+
+/* ── 1. Fluid foundation ─────────────────────────────────────────── */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  font-size: clamp(12.5px, 12px + 0.12vw, 14px);
+  padding: clamp(14px, 2.2vw, 26px) clamp(12px, 2.4vw, 24px) 48px;
+  max-width: 2200px;
+  margin-inline: auto;
+  overflow-wrap: break-word;
+}
+
+/* ── 2. Matrix: intrinsic column floor, scroll when it cannot fit ── */
+.matrix {
+  grid-template-columns: minmax(118px, 148px) repeat(6, minmax(158px, 1fr));
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+}
+
+/* Risk domain stays pinned while the action-type columns scroll past it */
+.row-label { position: sticky; left: 0; z-index: 2; }
+.col-header-spacer { position: sticky; left: 0; z-index: 3; }
+
+/* ── 3. Cross-cutting grid: never overflow a narrow viewport ─────── */
+.universal-grid { grid-template-columns: repeat(auto-fill, minmax(min(210px, 100%), 1fr)); }
+
+/* ── 4. Per-cell column identity ─────────────────────────────────────
+   Declared once here and switched on by any context that hides the
+   column headers (phone, print). Gap cards carry no mapping line of
+   their own, so without this they lose all column attribution.       */
+.cell::before {
+  display: none;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.cell[id$="-tool"]::before { content: "Tool Calling";       color: var(--tool-text); }
+.cell[id$="-comp"]::before { content: "Computer Use";       color: var(--comp-text); }
+.cell[id$="-code"]::before { content: "Code Gen & Exec";    color: var(--code-text); }
+.cell[id$="-data"]::before { content: "Data Interaction";   color: var(--data-text); }
+.cell[id$="-ctx"]::before  { content: "Context & Hand-off"; color: var(--ctx-text); }
+.cell[id$="-task"]::before { content: "Task Execution";     color: var(--task-text); }
+
+/* ── 5. Phones and small tablets: stack the matrix into sections ───
+   `screen` is load-bearing: a print viewport can fall under 680px
+   (A4 at 1in margins is ~602px, US Letter ~739px), which would make
+   paper output depend on the reader's page size.                    */
+@media screen and (max-width: 680px) {
+  .matrix {
+    display: block;
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 24px;
+  }
+
+  .col-header, .col-header-spacer { display: none; }
+
+  /* Deliberately not sticky. Once .matrix is a block, all 10 labels
+     share one containing block and would pin at top:0 together — a
+     shorter label painting over a taller one leaves its bottom edge
+     showing through. Per-row wrappers would be needed to do this. */
+  .row-label {
+    position: static;
+    border: 1px solid var(--border);
+    border-left-width: 3px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin-top: 16px;
+    padding: 10px 12px;
+  }
+  .row-label h3 { font-size: 12px; }
+  .row-label p  { font-size: 11px; }
+
+  .cell, .cell.last-row {
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 10px 12px;
+  }
+  .cell.data-col { border-left: 1px solid var(--border); }
+
+  .card-name { font-size: 12px; }
+  .card-tag, .card-body p { font-size: 11px; }
+}
+
+/* ── 6. Touch devices: larger hit areas ──────────────────────────── */
+@media (pointer: coarse) {
+  .btn { padding: 8px 15px; font-size: 12px; }
+  .metric-card, .gap-card { padding: 10px 11px; }
+  .universal-card { padding: 12px 13px; }
+  .reference-link { padding: 6px 11px; font-size: 11px; }
+}
+
+/* ── 7. No hover: drop affordances that can stick on tap ─────────── */
+@media (hover: none) {
+  .btn:hover { background: var(--surface); color: var(--text-muted); }
+  .btn.active:hover { background: var(--text); color: var(--bg); }
+  .metric-card:hover, .universal-card:hover { border-color: var(--border); background: var(--surface); }
+  .gap-card:hover { opacity: 1; }
+}
+
+/* ── 8. Reduced motion ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* ── 9. Print / PDF: stack for paper, expand every card ─────────── */
+@media print {
+  html, body { background: #ffffff; }
+
+  .controls { display: none; }
+
+  /* A seven-column grid will not fit a page; stack it like the phone view */
+  .matrix { display: block; overflow: visible; border: none; }
+  .col-header, .col-header-spacer { display: none; }
+
+  /* !important is required here: .cell:last-child, .cell.last-row and
+     .cell.data-col are all (0,2,0) and outrank a bare .cell, which would
+     otherwise print the fin-* row open-bottomed and the data column with
+     a mismatched pink left edge. */
+  .row-label, .cell {
+    position: static !important;
+    border: 1px solid #cccccc !important;
+    break-inside: avoid;
+  }
+
+  /* White-on-navy, and browsers drop backgrounds by default — without
+     this the badge prints white on white. */
+  .chai-badge { background: #ffffff !important; color: #111111 !important; border: 1px solid #999999; }
+
+  /* Nothing should be lost on paper because it happened to be collapsed */
+  .card-body { display: block !important; }
+  .metric-card, .gap-card, .universal-card { break-inside: avoid; }
+}
+
+/* ── 10. Shared by every stacked context (phone + paper) ──────────
+   Safe only where .matrix is a block. In the grid, display:none on a
+   cell would remove it from grid flow and shift every later item.   */
+@media screen and (max-width: 680px), print {
+
+  .cell::before { display: block; }
+
+  /* A cell holding neither a metric nor a gap contributes nothing */
+  .cell:empty { display: none; }
+
+  /* Close the section on whichever cell actually ends it. The static
+     rule is the fallback wherever :has() is unsupported. */
+  .cell[id$="-task"] { border-radius: 0 0 var(--radius) var(--radius); }
+  .cell:not(:empty):not(:has(
+    + .cell:not(:empty),
+    + .cell + .cell:not(:empty),
+    + .cell + .cell + .cell:not(:empty),
+    + .cell + .cell + .cell + .cell:not(:empty),
+    + .cell + .cell + .cell + .cell + .cell:not(:empty)
+  )) { border-radius: 0 0 var(--radius) var(--radius); }
+
+  /* A category filter can empty a whole row; don't strand its header.
+     Tests exactly the six following cells — the chain cannot run into
+     the next row, because a .row-label breaks the `+ .cell` sequence. */
+  .row-label:not(:has(
+    + .cell:not(:empty),
+    + .cell + .cell:not(:empty),
+    + .cell + .cell + .cell:not(:empty),
+    + .cell + .cell + .cell + .cell:not(:empty),
+    + .cell + .cell + .cell + .cell + .cell:not(:empty),
+    + .cell + .cell + .cell + .cell + .cell + .cell:not(:empty)
+  )) { display: none; }
+}
+</style>
 </head>
 <body>
 
@@ -267,20 +364,20 @@ body { font-family: var(--font); background: transparent; color: var(--text); pa
     <span class="chai-badge">CHAI</span>
     <h1>Agentic AI — Unified T&amp;E Framework</h1>
   </div>
-  <p>Metrics mapped across 6 action types × 10 risk domains. The first 3 columns (Tool Calling, Computer Use, Code Generation) represent agentic action mechanisms, while the second 3 (Data Interaction, Context & Hand-off, Task Execution) capture broader agent workflow capabilities. The framework combines operational, technical, safety, and governance-oriented risk domains, with metrics re-mapped where needed using domain-specific rationales. The cross-cutting metrics section complements this structure by grouping evaluations that apply broadly across agentic systems rather than a single action type. T&E coverage gaps are marked explicitly throughout the framework. Click any card to open its full definition, rationale, and benchmark in a detail panel. Gap cards identify where evaluation coverage is currently missing. Each risk domain is tagged as Structural, Operating, or Hybrid to distinguish pre-deployment governance controls from runtime monitoring and oversight needs.</p>
+  <p>Metrics mapped across 6 action types × 10 risk domains. The first 3 columns (Tool Calling, Computer Use, Code Generation) represent agentic action mechanisms, while the second 3 (Data Interaction, Context & Hand-off, Task Execution) capture broader agent workflow capabilities. The framework combines operational, technical, safety, and governance-oriented risk domains, with metrics re-mapped where needed using domain-specific rationales. The cross-cutting metrics section complements this structure by grouping evaluations that apply broadly across agentic systems rather than a single action type. T&E coverage gaps are marked explicitly throughout the framework. Click any card to expand the definition, rationale, and benchmark details. Gap cards identify where evaluation coverage is currently missing. Each risk domain is tagged as Structural, Operating, or Hybrid to distinguish pre-deployment governance controls from runtime monitoring and oversight needs.</p>
 </div>
 
 <div class="controls">
   <span class="controls-label">Filter by principle</span>
-  <button class="chai-btn active" onclick="filterCat(this,'all')">All</button>
-  <button class="chai-btn" onclick="filterCat(this,'safety')">Safety &amp; Reliability</button>
-  <button class="chai-btn" onclick="filterCat(this,'efficacy')">Efficacy</button>
-  <button class="chai-btn" onclick="filterCat(this,'efficiency')">Efficiency</button>
-  <button class="chai-btn" onclick="filterCat(this,'transparency')">Transparency</button>
-  <button class="chai-btn" onclick="filterCat(this,'fairness')">Fairness &amp; Bias</button>
-  <button class="chai-btn" onclick="filterCat(this,'usability')">Usability</button>
+  <button class="btn active" onclick="filterCat(this,'all')">All</button>
+  <button class="btn" onclick="filterCat(this,'safety')">Safety &amp; Reliability</button>
+  <button class="btn" onclick="filterCat(this,'efficacy')">Efficacy</button>
+  <button class="btn" onclick="filterCat(this,'efficiency')">Efficiency</button>
+  <button class="btn" onclick="filterCat(this,'transparency')">Transparency</button>
+  <button class="btn" onclick="filterCat(this,'fairness')">Fairness &amp; Bias</button>
+  <button class="btn" onclick="filterCat(this,'usability')">Usability</button>
   <div class="sep"></div>
-  <button class="chai-btn active" id="gap-toggle" onclick="toggleGaps(this)">Show gaps</button>
+  <button class="btn active" id="gap-toggle" onclick="toggleGaps(this)">Hide gaps</button>
 </div>
 
 <div class="summary" id="summary-bar"></div>
@@ -444,17 +541,6 @@ body { font-family: var(--font); background: transparent; color: var(--text); pa
   <p>Only metrics whose definition in the CHAI T&amp;E framework is mechanism-agnostic are listed here. Metrics specific to multi-agent interactions, a single interface type, or a clinical sub-domain are placed in their respective cells above.</p>
   <div class="universal-grid" id="universal-grid"></div>
 </div>
-
-<dialog id="framework-modal" class="framework-modal" aria-labelledby="modal-title">
-  <div class="modal-panel">
-    <button type="button" class="modal-close" aria-label="Close">&times;</button>
-    <header class="modal-header">
-      <h2 id="modal-title"></h2>
-      <p id="modal-subtitle" class="modal-subtitle"></p>
-    </header>
-    <div id="modal-body" class="modal-body"></div>
-  </div>
-</dialog>
 
 <script>
 /*
@@ -1125,6 +1211,12 @@ const METRICS = [
     bench:"Target USS ≥ 0.80 or CSAT ≥ 80%",
     lit:"https://arxiv.org/abs/2308.08155" },
 
+  // fin-comp: HealthAdminBench — end-to-end completion of revenue-cycle admin workflows with direct financial consequence
+  { name:"Economically Valuable Administrative Task Success Rate (HealthAdminBench)", abbr:"HAB-TSR", col:"comp", cat:"efficacy", risk:"fin",
+    desc:"Whether a computer-use agent completes end-to-end healthcare administrative workflows carrying direct financial consequence, such as prior authorization, appeals and denials management, and DME order processing, across simulated EHR, payer portal, and fax GUIs. End-to-end success is reported separately from subtask success, since strong subtask performance can mask low end-to-end reliability on economically consequential, hard-to-reverse financial actions.",
+    bench:"HealthAdminBench (135 tasks, 1,698 eval points): best agent (Claude Opus 4.6 CUA) 36.3% end-to-end vs. 82.8% subtask success; no universal threshold. Set a local baseline by workflow type",
+    lit:"https://arxiv.org/abs/2604.09937" },
+
   // fin-code: RNIR — silent regressions in financial code = undetected pricing errors, fraud control gaps, or incorrect transaction logic
   { name:"Regression Non-Introduction Rate (RNIR)", abbr:"RNIR", col:"code", cat:"safety", risk:"fin",
     desc:"Proportion of agent-generated code patches that fix the target issue without breaking any previously passing tests. In financial software, silent regressions introduced by autonomous code generation can corrupt pricing logic, disable fraud controls, or alter transaction authorization rules — harms that may not surface until significant financial loss has occurred.",
@@ -1274,7 +1366,7 @@ function render() {
     const cell = document.getElementById(`${m.risk}-${m.col}`);
     if (!cell) return;
     counts[m.col]++;
-    const card = makeMetricCard({ type: 'metric', data: m });
+    const card = makeMetricCard(m);
     card.classList.add('visible');
     cell.appendChild(card);
   });
@@ -1284,7 +1376,7 @@ function render() {
       const cell = document.getElementById(g.cell);
       if (!cell) return;
       counts.gap++;
-      const card = makeGapCard({ type: 'gap', data: g });
+      const card = makeGapCard(g);
       card.classList.add('visible');
       cell.appendChild(card);
     });
@@ -1293,7 +1385,7 @@ function render() {
   METRICS.filter(m => m.col === 'all').forEach(m => {
     if (currentCat !== 'all' && m.cat !== currentCat) return;
     counts.all++;
-    const card = makeUniversalCard({ type: 'universal', data: m });
+    const card = makeUniversalCard(m);
     card.classList.add('visible');
     document.getElementById('universal-grid').appendChild(card);
   });
@@ -1398,123 +1490,73 @@ function referenceLinks(lit) {
     let host = 'source';
     try { host = new URL(url).hostname.replace(/^www\./, ''); } catch (e) {}
     const label = urls.length > 1 ? `Reference ${i + 1}` : 'Reference';
-    return `<a class="reference-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${label} · ${escapeHtml(host)}</a>`;
+    return `<a class="reference-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">${label} · ${escapeHtml(host)}</a>`;
   }).join('');
 }
 
-const frameworkModal = document.getElementById('framework-modal');
-const modalTitle = document.getElementById('modal-title');
-const modalSubtitle = document.getElementById('modal-subtitle');
-const modalBody = document.getElementById('modal-body');
 
-function initFrameworkModal() {
-  frameworkModal.querySelector('.modal-close').addEventListener('click', () => frameworkModal.close());
-  frameworkModal.addEventListener('click', (e) => {
-    if (e.target === frameworkModal) frameworkModal.close();
-  });
-}
-
-function modalPayloadForEntry(entry) {
-  if (entry.type === 'metric' || entry.type === 'universal') {
-    const m = entry.data;
-    const split = splitMetricText(m);
-    return {
-      title: m.name,
-      subtitle: entry.type === 'universal'
-        ? `${m.cat.charAt(0).toUpperCase() + m.cat.slice(1)} · ${riskLabel(m.risk)} · All action types`
-        : `${m.cat.charAt(0).toUpperCase() + m.cat.slice(1)} · ${riskLabel(m.risk)}`,
-      bodyHtml: buildMetricDetailHtml(m, split),
-    };
-  }
-  const g = entry.data;
-  return {
-    title: g.name,
-    subtitle: 'Coverage gap',
-    bodyClass: 'gap-detail',
-    bodyHtml: `
-      <div class="card-section">
-        <span class="card-section-label">Why this is a gap</span>
-        <p>${g.desc}</p>
-      </div>`,
-  };
-}
-
-function openFrameworkModal({ title, subtitle, bodyHtml, bodyClass }) {
-  modalTitle.textContent = title;
-  modalSubtitle.textContent = subtitle;
-  modalBody.className = 'modal-body' + (bodyClass ? ' ' + bodyClass : '');
-  modalBody.innerHTML = bodyHtml;
-  if (!frameworkModal.open) frameworkModal.showModal();
-}
-
-function buildMetricDetailHtml(m, split) {
-  return `
-    <div class="modal-meta">${riskLabel(m.risk)} × ${COL_LABELS[m.col]}</div>
-    <div class="card-section">
-      <span class="card-section-label">Definition</span>
-      <p>${split.definition}</p>
-    </div>
-    <div class="card-section">
-      <span class="card-section-label">Mapping rationale</span>
-      <p class="card-rationale">${split.rationale}</p>
-    </div>
-    <span class="card-bench ${m.col}">${m.bench}</span>
-    <div class="card-section card-reference-section">
-      <span class="card-section-label">Supporting literature</span>
-      ${referenceLinks(m.lit)}
-    </div>`;
-}
-
-function bindCardOpen(d, entry) {
-  const open = () => openFrameworkModal(modalPayloadForEntry(entry));
-  d.addEventListener('click', open);
-  d.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      open();
-    }
-  });
-}
-
-function makeMetricCard(entry) {
-  const m = entry.data;
+function makeMetricCard(m) {
   const d = document.createElement('div');
+  const split = splitMetricText(m);
   d.className = 'metric-card';
-  d.setAttribute('role', 'button');
-  d.setAttribute('tabindex', '0');
   d.innerHTML = `
     <div class="card-name">${m.name}</div>
-    <div class="card-tag">${m.cat.charAt(0).toUpperCase() + m.cat.slice(1)}</div>
-    <div class="card-open-hint">View details</div>`;
-  bindCardOpen(d, entry);
+    <div class="card-tag">${m.cat.charAt(0).toUpperCase()+m.cat.slice(1)}</div>
+    <div class="card-body">
+      <div class="card-mapping">${riskLabel(m.risk)} × ${COL_LABELS[m.col]}</div>
+      <div class="card-section">
+        <span class="card-section-label">Definition</span>
+        <p>${split.definition}</p>
+      </div>
+      <div class="card-section">
+        <span class="card-section-label">Mapping rationale</span>
+        <p class="card-rationale">${split.rationale}</p>
+      </div>
+      <span class="card-bench ${m.col}">${m.bench}</span>
+      <div class="card-section card-reference-section">
+        <span class="card-section-label">Supporting literature</span>
+        ${referenceLinks(m.lit)}
+      </div>
+    </div>`;
+  d.addEventListener('click', () => d.classList.toggle('expanded'));
   return d;
 }
 
-function makeGapCard(entry) {
-  const g = entry.data;
+function makeGapCard(g) {
   const d = document.createElement('div');
   d.className = 'gap-card';
-  d.setAttribute('role', 'button');
-  d.setAttribute('tabindex', '0');
   d.innerHTML = `
     <div class="card-name"><span class="gap-badge">Gap</span>${g.name}</div>
     <div class="card-tag">Coverage missing</div>
-    <div class="card-open-hint">View details</div>`;
-  bindCardOpen(d, entry);
+    <div class="card-body"><p>${g.desc}</p></div>`;
+  d.addEventListener('click', () => d.classList.toggle('expanded'));
   return d;
 }
 
-function makeUniversalCard(entry) {
-  const m = entry.data;
+function makeUniversalCard(m) {
   const d = document.createElement('div');
+  const split = splitMetricText(m);
   d.className = 'universal-card';
-  d.setAttribute('role', 'button');
-  d.setAttribute('tabindex', '0');
   d.innerHTML = `
     <div class="card-name">${m.name}</div>
-    <div class="card-tag">${m.cat.charAt(0).toUpperCase() + m.cat.slice(1)} · ${riskLabel(m.risk)}</div>
-    <div class="card-open-hint">View details</div>`;
-  bindCardOpen(d, entry);
+    <div class="card-tag">${m.cat.charAt(0).toUpperCase()+m.cat.slice(1)} · ${riskLabel(m.risk)}</div>
+    <div class="card-body">
+      <div class="card-mapping">${riskLabel(m.risk)} × ${COL_LABELS[m.col]}</div>
+      <div class="card-section">
+        <span class="card-section-label">Definition</span>
+        <p>${split.definition}</p>
+      </div>
+      <div class="card-section">
+        <span class="card-section-label">Mapping rationale</span>
+        <p class="card-rationale">${split.rationale}</p>
+      </div>
+      <span class="card-bench all">${m.bench}</span>
+      <div class="card-section card-reference-section">
+        <span class="card-section-label">Supporting literature</span>
+        ${referenceLinks(m.lit)}
+      </div>
+    </div>`;
+  d.addEventListener('click', () => d.classList.toggle('expanded'));
   return d;
 }
 
@@ -1526,7 +1568,7 @@ function riskLabel(r) {
 }
 
 function filterCat(btn, cat) {
-  document.querySelectorAll('.chai-btn[onclick^="filterCat"]').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.btn[onclick^="filterCat"]').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   currentCat = cat;
   render();
@@ -1535,11 +1577,10 @@ function filterCat(btn, cat) {
 function toggleGaps(btn) {
   showGaps = !showGaps;
   btn.classList.toggle('active', showGaps);
-  btn.textContent = showGaps ? 'Show gaps' : 'Hide gaps';
+  btn.textContent = showGaps ? 'Hide gaps' : 'Show gaps';
   render();
 }
 
-initFrameworkModal();
 render();
 </script>
 </body>
