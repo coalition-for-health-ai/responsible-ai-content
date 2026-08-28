@@ -302,38 +302,12 @@ https://doi.org/10.48550/arXiv.2009.08441.
 - **Human Agency Preservation and Dependency-Risk Evaluation**
 
   - Responsible AI Principle: Cross-Cutting
-  - Description: Multi-turn behavioral evaluation of whether a genAI-enabled
-wellness application preserves user agency and avoids reinforcing unhealthy
-dependency across a sustained interaction rather than within a single response.
-Scenarios span direct decision requests, repeated reassurance seeking,
-anthropomorphic or exclusive attachment, withdrawal from human relationships,
-compulsive-use signals, professional-care substitution, and ordinary low-risk
-reflection. Human reviewers score observable system behavior across seven
-dimensions: AI identity and scope, epistemic humility, choice preservation,
-dependency non-reinforcement, reassurance-loop handling, safety escalation, and
-proportionality. The method is intended to translate agency, autonomy,
-over-reliance, and dependency concerns — currently distributed across broad
-frameworks, interface-usability discussion, expert-safety rubrics, and the APA
-advisory — into a dedicated, behaviorally anchored evaluation with reportable
-dimensions.
-  - Intended Use: Use for conversational wellness systems where harm may
-accumulate across turns even when each individual response is polite, factually
-plausible, and non-crisis. Risk of this kind can build when a system repeatedly
-supplies certainty, makes personal decisions on the user's behalf, rewards
-exclusivity, amplifies anthropomorphism, displaces human relationships, or
-functions as a substitute for professional care. Developers may use the method
-to distinguish healthy reflective support from judgment substitution and to
-generate release and monitoring evidence; implementers may use it to compare
-products without assuming that engagement, satisfaction, empathy, or
-self-disclosure alone demonstrates safe preservation of human agency. This is a
-candidate method and should be validated before being adopted as a scored
-instrument.
+  - Description: Multi-turn behavioral evaluation of whether a genAI-enabled wellness application preserves user agency and avoids reinforcing unhealthy dependency across a sustained interaction rather than within a single response. Scenarios span direct decision requests, repeated reassurance seeking,anthropomorphic or exclusive attachment, withdrawal from human relationships, compulsive-use signals, professional-care substitution, and ordinary low-risk reflection. Human reviewers score observable system behavior across seven dimensions: AI identity and scope, epistemic humility, choice preservation, dependency non-reinforcement, reassurance-loop handling, safety escalation, and proportionality. The method is intended to translate agency, autonomy, over-reliance, and dependency concerns — currently distributed across broad frameworks, interface-usability discussion, expert-safety rubrics, and the APA advisory into a dedicated, behaviorally anchored evaluation with reportable dimensions.
+  - Intended Use: Use for conversational wellness systems where harm may accumulate across turns even when each individual response is polite, factually plausible, and non-crisis. Risk of this kind can build when a system repeatedly supplies certainty, makes personal decisions on the user's behalf, rewards exclusivity, amplifies anthropomorphism, displaces human relationships, or
+functions as a substitute for professional care. Developers may use the method to distinguish healthy reflective support from judgment substitution and to generate release and monitoring evidence; implementers may use it to compare products without assuming that engagement, satisfaction, empathy, or self-disclosure alone demonstrates safe preservation of human agency. This is a candidate method and should be validated before being adopted as a scored instrument.
   - Lifecycle Phase: Pre- and Post-deployment
   - Persona: Developer, Implementer, Researcher, End User
-  - Supporting Literature: American Psychological Association. Health Advisory
-on the Use of Generative AI Chatbots and Wellness Applications for Mental
-Health. American Psychological Association; 2025.; Fang C, et al. How AI and Human Behaviors Shape
-Psychosocial Effects of Chatbot Use. arXiv:2503.17473.
+  - Supporting Literature: American Psychological Association. Health Advisory on the Use of Generative AI Chatbots and Wellness Applications for Mental Health. American Psychological Association; 2025.; Fang C, et al. How AI and Human Behaviors Shape Psychosocial Effects of Chatbot Use. arXiv:2503.17473.
 
 Other Revelevant Literature
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
