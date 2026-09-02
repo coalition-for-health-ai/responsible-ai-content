@@ -14,7 +14,7 @@ CHAI extends its sincere appreciation to all participants for their time, expert
 - Craig Norquist, MD, HonorHealth
 - Joe Derenzo, PMP, Healthcare Performance Group Inc.
 - Renee Moss RN, BSN, CPhT, PMP, Healthcare Performance Group Inc.
-- Jennifer Shannon MD, Individual Contributor
+- Jennifer Shannon, MD, Individual Contributor
 - Brittney Harrell, CISSP, Nabla
 - Jeffrey A. Gold, MD, Oregon Health & Science University
 - R Logan Jones MD FACP, Oregon Health & Science University
@@ -22,4 +22,5 @@ CHAI extends its sincere appreciation to all participants for their time, expert
 - Christopher H. Lee, MBA, BSN, RN-BC, UCLA Health
 - Hwayoung Cho, PhD, RN, FAMIA, University of Florida College of Nursing
 - Shiba Kuanar, University of Minnesota
+- Maritza M. Suarez, MD, University of Miami Miller School of Medicine
 - Ann Wieben, PhD, RN, NI-BC, FAMIA, University of Wisconsin-Madison
