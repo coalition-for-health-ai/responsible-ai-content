@@ -56,6 +56,26 @@ html_static_path = ['_static']
 html_logo = "_static/logo.png"
 html_show_sphinx = False
 
+# -- Analytics (cookie consent + Microsoft Clarity) --------------------------
+# Clarity loads only after the visitor clicks Accept in the cookie banner, and
+# only on the hosts below. See _static/chai-analytics.js for the events.
+# CLARITY_PROJECT_ID / CLARITY_HOSTS override these (e.g. for a local test).
+
+import os
+
+clarity_project_id = os.environ.get('CLARITY_PROJECT_ID', 'q7sz5dhg7b')
+clarity_hosts = os.environ.get('CLARITY_HOSTS', 'rai-content.chai.org')
+
+html_css_files = ['chai-analytics.css']
+html_js_files = [
+    ('chai-analytics.js', {
+        'defer': 'defer',
+        'data-clarity-project': clarity_project_id,
+        'data-clarity-hosts': clarity_hosts,
+        'data-privacy-url': 'https://registry.chai.org/privacy-policy',
+    }),
+]
+
 latex_logo = "_static/logo.png"
 latex_elements = {
   'extraclassoptions': 'openany,oneside'
