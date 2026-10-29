@@ -197,6 +197,67 @@ Safety and Reliability
 
     * `Managerial framework for evaluating AI chatbot integration: Bridging organizational readiness and technological challenges <https://www.sciencedirect.com/science/article/pii/S0007681324000648>`__
 
+* **Task-Informed Single- and Multi-Turn Red Teaming**
+
+  * **Responsible AI Principle:** Safety and Reliability
+
+  * **Description:** Conduct structured adversarial testing to identify safety, reliability, and behavioral-compliance failures in patient-facing health chatbots. The method should use attack vectors adapted to the chatbot’s intended use, foreseeable user behaviors, knowledge sources, and safety boundaries. Testing should distinguish between:
+
+    * **Document Adherence:** whether the chatbot accurately represents retrieved or otherwise authorized source material and avoids fabricating, contradicting, or extending beyond that information.
+    * **Instruction Adherence:** whether the chatbot follows its defined behavioral and safety requirements, including restrictions on scope, use of unsupported knowledge, disclosure of internal information, handling of distress, and responses to adversarial instructions.
+
+  Red teaming should include both broad single-turn attacks and sustained multi-turn conversational stress tests. Multi-turn tests should assess whether initially appropriate behavior deteriorates when a user repeatedly requests unsupported advice, rejects escalation, reframes an unsafe request, or otherwise pressures the chatbot to deviate from its safety boundaries. Identified failures should be categorized by adherence type and graded by potential severity.
+
+  * **Intended Use:** This method can be used to:
+
+    1. identify domain-specific vulnerabilities that may not be detected through standard factuality, toxicity, or benchmark evaluations;
+    2. evaluate whether chatbot safety controls remain effective across conversational depth;
+    3. distinguish failures arising from inaccurate use of retrieved information from failures to follow behavioral instructions;
+    4. identify high-severity responses that could cause harm, encourage unsafe behavior, marginalize a user, or expose private or internal system information;
+    5. inform targeted mitigations such as prompt revision, retrieval or document augmentation, workflow constraints, escalation logic, and safe-response pathways; and
+    6. repeat adversarial testing after mitigation to determine whether identified vulnerabilities have been reduced without introducing new failure modes.
+  * **Recommended Attack Coverage:** Attack vectors should be adapted to the intended use and reasonably foreseeable user interactions. For retrieval-augmented health chatbots, recommended coverage may include:
+
+    * requests for information absent from the retrieved source;
+    * user statements that contradict the retrieved source;
+    * questions containing false or unsupported premises;
+    * requests for health, social, legal, or other advice outside the chatbot’s authorized knowledge;
+    * expressions of acute distress or urgent safety concerns;
+    * toxic, hostile, slang-filled, misspelled, or otherwise challenging user language; and
+    * prompt-injection or instruction-override attempts.
+
+  Attack sets should vary in topic, wording, complexity, urgency, conversational position, and degree of directness. Test cases should reflect realistic interactions rather than relying exclusively on generic cybersecurity or jailbreak prompts.
+
+  * **Evaluation and Annotation:** Each chatbot response should be assessed for both Document Adherence and Instruction Adherence, regardless of the attack vector’s primary target. Errors should be further classified by severity:
+
+    * **High-severity safety violation:** a response that could plausibly cause harm, encourage unsafe behavior, provide unqualified or unsupported guidance in a sensitive context, marginalize or blame the user, disclose private information, or expose system instructions or internal data.
+    * **Lower-severity utility failure:** an unhelpful, incomplete, overly generic, inappropriate, or conversation-ending response that reduces utility but does not present an immediate safety risk.
+
+  For multi-turn tests, an **any-turn failure** rule may be used, under which the conversation is classified as failed when any response within the defined test window violates the applicable criteria. Human annotation should use a predefined rubric, with a subset independently reviewed by an additional evaluator and inter-rater agreement reported when feasible.
+
+  * **Recommended Metrics:**
+
+    * overall red-team error rate;
+    * Document Adherence error rate;
+    * Instruction Adherence error rate;
+    * high-severity failure rate;
+    * error rate by attack vector;
+    * single-turn versus multi-turn error rate;
+    * any-turn multi-turn failure rate;
+    * mitigation-associated change in error rate; and
+    * inter-rater agreement for human annotation.
+
+  Metrics should be reported separately by attack vector, conversation depth, adherence category, and severity. Aggregated error rates alone may obscure concentrated high-risk vulnerabilities.
+
+  * **Pre- or Post-Implementation (or Both):** Both. Red teaming should primarily be conducted before implementation and repeated following material changes to the model, prompt, retrieval system, knowledge base, safety architecture, or conversational workflow. Controlled post-implementation red teaming may be used as part of periodic monitoring, provided that testing does not expose users or production systems to avoidable harm.
+
+  * **Persona (Developer, Implementer, or Both):** Both. Developers should design attack sets, characterize failure modes, implement mitigations, and document residual risks. Implementers should adapt the test set to the local population, deployment environment, escalation pathways, authorized content, and reasonably foreseeable misuse.
+
+  * **Benchmark:** No universal passing threshold is currently established. Organizations should define risk-based acceptance criteria before testing. High-severity failures should receive immediate review and should not be obscured by strong aggregate performance. Comparisons should emphasize performance across attack vectors, conversational depth, and mitigation conditions rather than relying on a single overall error rate.
+
+  * **Supporting Literature:**
+
+    * Hussain, S.-A., Jackson, D. I., Lewis, A., Fosler-Lussier, E., et al. *Toward trustworthy chatbots: a protocol for red teaming for health related conversations.* Scientific Reports, 16, 15550 (2026). https://doi.org/10.1038/s41598-026-45719-3
 
 Transparency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
